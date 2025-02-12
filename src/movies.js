@@ -163,14 +163,15 @@ function bestYearAvg(moviesArray) {
     const highestScore = sortScores.filter((item) => {
         return item.avgScore === sortScores[0].avgScore
     }).sort((a, b) => {
-        if (a.year > b.avgScore) {
-          return -1;
-        } else if (a.year < b.year) {
+        if (a.year > b.year) {
           return 1;
+        } else if (a.year < b.year) {
+          return -1;
         } else {
           return 0;
         }
     });
+
 
     return `The best year was ${highestScore[0].year} with an average score of ${highestScore[0].avgScore}`;
  };
